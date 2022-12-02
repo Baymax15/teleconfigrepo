@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration>
+<Configuration monitorInterval="0">
     <Properties>
         <Property name="LOGS">../logs</Property>
         <Property name="patternConsole">%d %p %C{1.} [%t] %m%n</Property>
@@ -7,12 +7,12 @@
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="${patternConsole}" />
+            <PatternLayout pattern="\${patternConsole}" />
         </Console>
 
-        <RollingFile name="rootLogger" fileName="${LOGS}/root-logger.log"
-            filePattern="${LOGS}/$${date:yyyy-MM}/root-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
-            <PatternLayout pattern="${patternFile}" />
+        <RollingFile name="rootLogger" fileName="\${LOGS}/root-logger.log"
+            filePattern="\${LOGS}/\$\${date:yyyy-MM}/root-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="10 MB" />
@@ -20,9 +20,9 @@
             </Policies>
         </RollingFile>
         <RollingFile name="crm"
-            fileName="${LOGS}/modules/crm-logger.log"
-            filePattern="${LOGS}/$${date:yyyy-MM}/crm-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
-            <PatternLayout pattern="${patternFile}" />
+            fileName="\${LOGS}/modules/crm-logger.log"
+            filePattern="\${LOGS}/\$\${date:yyyy-MM}/crm-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="10 MB" />
@@ -30,9 +30,9 @@
             </Policies>
         </RollingFile>
         <RollingFile name="sms"
-            fileName="${LOGS}/modules/sms-logger.log"
-            filePattern="${LOGS}/$${date:yyyy-MM}/sms-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
-            <PatternLayout pattern="${patternFile}" />
+            fileName="\${LOGS}/modules/sms-logger.log"
+            filePattern="\${LOGS}/\$\${date:yyyy-MM}/sms-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="10 MB" />
@@ -40,9 +40,9 @@
             </Policies>
         </RollingFile>
         <RollingFile name="email"
-            fileName="${LOGS}/modules/email-logger.log"
-            filePattern="${LOGS}/$${date:yyyy-MM}/email-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
-            <PatternLayout pattern="${patternFile}" />
+            fileName="\${LOGS}/modules/email-logger.log"
+            filePattern="\${LOGS}/\$\${date:yyyy-MM}/email-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="10 MB" />
@@ -50,9 +50,9 @@
             </Policies>
         </RollingFile>
         <RollingFile name="billing"
-            fileName="${LOGS}/modules/billing-logger.log"
-            filePattern="${LOGS}/$${date:yyyy-MM}/billing-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
-            <PatternLayout pattern="${patternFile}" />
+            fileName="\${LOGS}/modules/billing-logger.log"
+            filePattern="\${LOGS}/\$\${date:yyyy-MM}/billing-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="10 MB" />
@@ -60,9 +60,9 @@
             </Policies>
         </RollingFile>
         <RollingFile name="inventory"
-            fileName="${LOGS}/modules/inventory-logger.log"
-            filePattern="${LOGS}/$${date:yyyy-MM}/inventory-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
-            <PatternLayout pattern="${patternFile}" />
+            fileName="\${LOGS}/modules/inventory-logger.log"
+            filePattern="\${LOGS}/\$\${date:yyyy-MM}/inventory-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="10 MB" />
@@ -70,9 +70,9 @@
             </Policies>
         </RollingFile>
         <RollingFile name="voicemail"
-            fileName="${LOGS}/modules/voicemail-logger.log"
-            filePattern="${LOGS}/$${date:yyyy-MM}/voicemail-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
-            <PatternLayout pattern="${patternFile}" />
+            fileName="\${LOGS}/modules/voicemail-logger.log"
+            filePattern="\${LOGS}/\$\${date:yyyy-MM}/voicemail-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="10 MB" />
@@ -80,9 +80,9 @@
             </Policies>
         </RollingFile>
         <RollingFile name="jmessage"
-            fileName="${LOGS}/modules/jmessage-logger.log"
-            filePattern="${LOGS}/$${date:yyyy-MM}/jmessage-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
-            <PatternLayout pattern="${patternFile}" />
+            fileName="\${LOGS}/modules/jmessage-logger.log"
+            filePattern="\${LOGS}/\$\${date:yyyy-MM}/jmessage-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="10 MB" />
