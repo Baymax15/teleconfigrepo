@@ -140,11 +140,11 @@
             <AppenderRef ref="voicemail" />
         </Logger>
 
-        <Logger name="org.example.teletomo.internalcoms" level="trace">
-            <AppenderRef ref="internalcoms" />
+        <Logger name="org.example.teletomo.intercoms" level="trace">
+            <AppenderRef ref="intercoms" />
         </Logger>
-        <Logger name="org.example.teletomo.modules.internalcoms" level="trace">
-            <AppenderRef ref="internalcoms" />
+        <Logger name="org.example.teletomo.modules.intercoms" level="trace">
+            <AppenderRef ref="intercoms" />
         </Logger>
 
         <Logger name="org.example.teletomo" level="trace">
