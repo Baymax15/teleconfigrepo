@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration monitorInterval="0">
+<Configuration monitorInterval="-1">
     <Properties>
         <Property name="LOGS">../logs</Property>
         <Property name="patternConsole">%d %p %C{1.} [%t] %m%n</Property>
@@ -79,9 +79,9 @@
                 <TimeBasedTriggeringPolicy />
             </Policies>
         </RollingFile>
-        <RollingFile name="jmessage"
-            fileName="\${LOGS}/modules/jmessage-logger.log"
-            filePattern="\${LOGS}/$\${date:yyyy-MM}/jmessage-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+        <RollingFile name="intercoms"
+            fileName="\${LOGS}/modules/intercoms-logger.log"
+            filePattern="\${LOGS}/$\${date:yyyy-MM}/intercoms-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
             <PatternLayout pattern="\${patternFile}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
