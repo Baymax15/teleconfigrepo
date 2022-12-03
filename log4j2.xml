@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration monitorInterval="-1">
+<Configuration monitorInterval="999">
     <Properties>
         <Property name="LOGS">../logs</Property>
         <Property name="patternConsole">%d %p %C{1.} [%t] %m%n</Property>
