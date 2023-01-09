@@ -98,56 +98,56 @@
             <AppenderRef ref="rootLogger" />
         </Root>
         <!-- LOG each module and its application to the respective appenders -->
-        <Logger name="org.example.teletomo.crm" level="trace">
+        <Logger name="org.example.teletomo.crm" level="trace" additivity="false">
             <AppenderRef ref="crm" />
         </Logger>
-        <Logger name="org.example.teletomo.modules.crm" level="trace">
+        <Logger name="org.example.teletomo.modules.crm" level="trace" additivity="false">
             <AppenderRef ref="crm" />
         </Logger>
 
-        <Logger name="org.example.teletomo.sms" level="trace">
+        <Logger name="org.example.teletomo.sms" level="trace" additivity="false">
             <AppenderRef ref="sms" />
         </Logger>
-        <Logger name="org.example.teletomo.modules.sms" level="trace">
+        <Logger name="org.example.teletomo.modules.sms" level="trace" additivity="false">
             <AppenderRef ref="sms" />
         </Logger>
 
-        <Logger name="org.example.teletomo.email" level="trace">
+        <Logger name="org.example.teletomo.email" level="trace" additivity="false">
             <AppenderRef ref="email" />
         </Logger>
-        <Logger name="org.example.teletomo.modules.email" level="trace">
+        <Logger name="org.example.teletomo.modules.email" level="trace" additivity="false">
             <AppenderRef ref="email" />
         </Logger>
 
-        <Logger name="org.example.teletomo.billing" level="trace">
+        <Logger name="org.example.teletomo.billing" level="trace" additivity="false">
             <AppenderRef ref="billing" />
         </Logger>
-        <Logger name="org.example.teletomo.modules.billing" level="trace">
+        <Logger name="org.example.teletomo.modules.billing" level="trace" additivity="false">
             <AppenderRef ref="billing" />
         </Logger>
 
-        <Logger name="org.example.teletomo.inventory" level="trace">
+        <Logger name="org.example.teletomo.inventory" level="trace" additivity="false">
             <AppenderRef ref="inventory" />
         </Logger>
-        <Logger name="org.example.teletomo.modules.inventory" level="trace">
+        <Logger name="org.example.teletomo.modules.inventory" level="trace" additivity="false">
             <AppenderRef ref="inventory" />
         </Logger>
 
-        <Logger name="org.example.teletomo.voicemail" level="trace">
+        <Logger name="org.example.teletomo.voicemail" level="trace" additivity="false">
             <AppenderRef ref="voicemail" />
         </Logger>
-        <Logger name="org.example.teletomo.modules.voicemail" level="trace">
+        <Logger name="org.example.teletomo.modules.voicemail" level="trace" additivity="false">
             <AppenderRef ref="voicemail" />
         </Logger>
 
-        <Logger name="org.example.teletomo.intercoms" level="trace">
+        <Logger name="org.example.teletomo.intercoms" level="trace" additivity="false">
             <AppenderRef ref="intercoms" />
         </Logger>
-        <Logger name="org.example.teletomo.modules.intercoms" level="trace">
+        <Logger name="org.example.teletomo.modules.intercoms" level="trace" additivity="false">
             <AppenderRef ref="intercoms" />
         </Logger>
 
-        <Logger name="org.example.teletomo" level="trace">
+        <Logger name="org.example.teletomo" level="trace" additivity="false">
             <AppenderRef ref="rootLogger" />
         </Logger>
     </Loggers>
