@@ -3,6 +3,7 @@
     <Properties>
         <Property name="LOGS">../logs</Property>
         <Property name="patternConsole">%d %p %C{1.} [%t] %m%n</Property>
+        <Property name="appName">\${spring:spring.application.name}</Property>
         <Property name="patternFile">%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable</Property>
     </Properties>
     <Appenders>
@@ -10,8 +11,8 @@
             <PatternLayout pattern="\${patternConsole}" />
         </Console>
 
-        <RollingFile name="rootLogger" fileName="\${LOGS}/root-logger.log"
-            filePattern="\${LOGS}/$\${date:yyyy-MM}/root-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+        <RollingFile name="rootLogger" fileName="\${LOGS}/${appName}-root-logger.log"
+            filePattern="\${LOGS}/$\${date:yyyy-MM}/${appName}-root-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
             <PatternLayout pattern="\${patternFile}" />
             <Policies>
                 <OnStartupTriggeringPolicy />
