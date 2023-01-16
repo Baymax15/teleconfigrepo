@@ -2,7 +2,7 @@
 <Configuration>
     <Properties>
         <Property name="LOGS">../logs</Property>
-        <Property name="patternConsole">%d %p %C{1.} [%t] %m%n</Property>
+        <Property name="patternConsole">%d %p [%t] %C{1.} %m%n</Property>
         <Property name="appName">voicemail</Property>
         <Property name="patternFile">%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable</Property>
     </Properties>
