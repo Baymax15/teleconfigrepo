@@ -7,6 +7,9 @@
         <Property name="patternFile">%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable</Property>
     </Properties>
     <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="\${patternConsole}" />
+        </Console>
         <RollingFile name="rootLogger" fileName="\${LOGS}/${appName}-root-logger.log"
             filePattern="\${LOGS}/$\${date:yyyy-MM}/${appName}-root-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
             <PatternLayout pattern="\${patternFile}" />
