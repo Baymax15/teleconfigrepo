@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="LOGS">../logs</Property>
+        <Property name="patternConsole">%d %p %C{1.} [%t] %m%n</Property>
+        <Property name="appName">voicemail</Property>
+        <Property name="patternFile">%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="rootLogger" fileName="\${LOGS}/${appName}-root-logger.log"
+            filePattern="\${LOGS}/$\${date:yyyy-MM}/${appName}-root-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
+            <Policies>
+                <OnStartupTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+        <RollingFile name="voicemail"
+            fileName="\${LOGS}/modules/voicemail-logger.log"
+            filePattern="\${LOGS}/$\${date:yyyy-MM}/voicemail-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
+            <Policies>
+                <OnStartupTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- LOG everything at INFO level -->
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="rootLogger" />
+        </Root>
+        <!-- LOG each module and its application to the respective appenders -->
+
+        <Logger name="org.example.teletomo" level="trace" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="rootLogger" />
+        </Logger>
+        <Logger name="org.example.teletomo.voicemail" level="trace" additivity="false">
+            <AppenderRef ref="voicemail" />
+            <AppenderRef ref="Console" />
+        </Logger>
+        <Logger name="org.example.teletomo.modules.voicemail" level="trace" additivity="false">
+            <AppenderRef ref="voicemail" />
+            <AppenderRef ref="Console" />
+        </Logger>
+    </Loggers>
+
+</Configuration>
