@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <RollingFile name="billing"
+            fileName="\${LOGS}/modules/billing-logger.log"
+            filePattern="\${LOGS}/$\${date:yyyy-MM}/billing-logger-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout pattern="\${patternFile}" />
+            <Policies>
+                <OnStartupTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.example.teletomo.billing" level="trace" additivity="false">
+            <AppenderRef ref="billing" />
+            <AppenderRef ref="Console" />
+        </Logger>
+        <Logger name="org.example.teletomo.modules.billing" level="trace" additivity="false">
+            <AppenderRef ref="billing" />
+            <AppenderRef ref="Console" />
+        </Logger>
+    </Loggers>
+
+</Configuration>

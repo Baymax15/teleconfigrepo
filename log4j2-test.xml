@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="warn">
+<Configuration>
+    <Properties>
+        <Property name="patternConsole">%d %p %C{1.} [%t] %m%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="\${patternConsole}" />
+        </Console>
+    </Appenders>
     <Loggers>
-        <Root level="off"/>
+        <Root level="trace">
+            <AppenderRef ref="Console">
+        </Root>
     </Loggers>
 </Configuration>
